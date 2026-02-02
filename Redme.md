@@ -1,38 +1,24 @@
+# Agência Criativa Web - Refatoração com SASS
 
----
+Este projeto é uma landing page moderna para a "Agência Criativa Web", focada em demonstrar a refatoração de um código CSS tradicional para uma estrutura modular, escalável e organizada utilizando **SASS**.
 
-## 🧩 Estrutura do Site
+## 🚀 Tecnologias Utilizadas
+* **HTML5** para a marcação estrutural.
+* **SASS (Syntactically Awesome Style Sheets)** para a estilização avançada.
+* **Metodologia BEM** (Block, Element, Modifier) para nomenclatura de classes.
+* **Node.js** para compilação do SASS via linha de comando.
 
-O site é composto pelas seguintes seções:
+## 🏗️ Estrutura do Projeto SASS
+Seguindo os requisitos de arquitetura modular, o projeto foi dividido em parciais (`partials`):
 
-- **Home** – Banner de boas-vindas com imagem responsiva
-- **Sobre Nós** – Apresentação da agência e seus valores
-- **Serviços** – Lista de serviços utilizando CSS Grid
-- **Depoimentos** – Comentários fictícios de clientes
-- **Contato** – Informações de contato e formulário
+* `_base.scss`: Resets globais, tipografia básica e estilos fundamentais.
+* `_variaveis.scss`: Definição de paleta de cores, fontes e espaçamentos reutilizáveis.
+* `_mixins.scss`: Mixins para centralização com Flexbox e comportamentos repetitivos.
+* `_layout.scss`: Estrutura de Header, Hero e alinhamento das seções.
+* `_componentes.scss`: Estilos específicos para botões, cards de serviços, formulário e depoimentos.
+* `estilos.scss`: Arquivo mestre que importa todos os parciais utilizando `@use`.
 
----
-
-## 📱 Responsividade
-
-- Layout totalmente responsivo
-- Uso de **Flexbox** e **CSS Grid**
-- Adaptação para diferentes resoluções com **media queries**
-- Imagens responsivas utilizando o atributo **`srcset`**
-
----
-
-## 📝 Formulário de Contato
-
-O formulário contém:
-- Campo para nome
-- Campo para e-mail
-- Campo para mensagem
-
----
-
-## 🚀 Como Executar o Projeto
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+## 🛠️ Como rodar o projeto
+Para compilar o SASS durante o desenvolvimento:
+```bash
+sass --watch scss/estilos.scss css/style.css

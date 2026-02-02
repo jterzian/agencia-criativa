@@ -1,0 +1,65 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 6vw;
+    background-color: $bg-dark;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__logo {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+}
+
+.nav__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__link {
+    color: white;
+    font-weight: 500;
+    &:hover { color: $secondary; }
+}
+
+.hero {
+    min-height: 80vh;
+    background: linear-gradient(135deg, #1e293b, #020617);
+    @include flex-col-centro;
+    text-align: center;
+    color: white;
+    padding: 4rem 2rem;
+
+    &__title { font-size: 3rem; margin-bottom: 1.5rem; }
+    &__description { max-width: 600px; font-size: 1.2rem; margin-bottom: 2rem; }
+    &__image { max-width: 80%; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+}
+
+.section {
+    padding: 5rem 8vw;
+    @include flex-col-centro;
+    text-align: center;
+
+    &--bg-alt { background-color: #f1f5f9; }
+}
+
+.section__title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: $secondary;
+        margin: 10px auto;
+    }
+}
